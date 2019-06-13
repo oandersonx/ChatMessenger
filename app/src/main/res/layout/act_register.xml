@@ -82,4 +82,15 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="81dp" />
 
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgPhoto"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnSelecionarFoto"
+        app:layout_constraintEnd_toEndOf="@+id/btnSelecionarFoto"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btnSelecionarFoto"
+        app:layout_constraintTop_toTopOf="@+id/btnSelecionarFoto"
+         />
+
 </android.support.constraint.ConstraintLayout>

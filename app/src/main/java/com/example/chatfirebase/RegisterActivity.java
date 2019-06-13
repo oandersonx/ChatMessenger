@@ -1,6 +1,10 @@
 package com.example.chatfirebase;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,7 +30,8 @@ public class RegisterActivity extends AppCompatActivity {
     private TextView txtNaotenhoumaconta;
     private Button btnCadastrar;
     private Button btnSelecionarFoto;
-    private mSelectedUri;
+    private Uri mSelectedUri;
+    private ImageView imgPhoto;
 
 
     @Override
@@ -37,7 +43,8 @@ public class RegisterActivity extends AppCompatActivity {
         edtSenha2 = findViewById(R.id.edtSenha2);
         txtNaotenhoumaconta = findViewById(R.id.txtNaotenhoumaconta);
         btnCadastrar = findViewById(R.id.btnCadastrar);
-        btnSelecionarFoto = findViewById(R.id.btnSelecionarFoto)
+        btnSelecionarFoto = findViewById(R.id.btnSelecionarFoto);
+        imgPhoto = findViewById(R.id.imgPhoto);
 
         btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +67,15 @@ public class RegisterActivity extends AppCompatActivity {
 
         if(requestCode == 0){
             mSelectedUri = data.getData();
+            Bitmap bitmap = null;
+
+            try {
+                MediaStore.Images.Media.getBitmap(getContentResolver(), mSelectedUri);
+                imgPhoto.setImageDrawable(new BitmapDrawable(bitmap));
+                btnSelecionarFoto.setAlpha(0);
+            }catch (Exception e){
+
+            }
         }
     }
 
