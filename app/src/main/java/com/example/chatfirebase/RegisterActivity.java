@@ -1,6 +1,8 @@
 package com.example.chatfirebase;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,6 +25,7 @@ public class RegisterActivity extends AppCompatActivity {
     private TextView txtNaotenhoumaconta;
     private Button btnCadastrar;
     private Button btnSelecionarFoto;
+    private mSelectedUri;
 
 
     @Override
@@ -42,6 +45,28 @@ public class RegisterActivity extends AppCompatActivity {
                 createUser();
             }
         });
+
+        btnSelecionarFoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                selectPhoto();
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == 0){
+            mSelectedUri = data.getData();
+        }
+    }
+
+    private void selectPhoto(){
+        Intent i = new Intent(Intent.ACTION_PICK);
+        i.setType("image/*");
+        startActivityForResult(i, 0);
     }
 
     private void createUser() {
