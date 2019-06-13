@@ -3,4 +3,5 @@
     <string name="bt_entrar">Entrar</string>
     <string name="txNaotenhoumaconta">Não tenho uma conta? Clique aqui</string>
     <string name="btCadastrar">Cadastrar</string>
+    <string name="btFoto">Foto</string>
 </resources>

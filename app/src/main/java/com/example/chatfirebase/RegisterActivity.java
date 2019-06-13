@@ -21,7 +21,8 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText edtEmail2;
     private EditText edtSenha2;
     private TextView txtNaotenhoumaconta;
-    private Button btnEntrar2;
+    private Button btnCadastrar;
+    private Button btnSelecionarFoto;
 
 
     @Override
@@ -32,9 +33,10 @@ public class RegisterActivity extends AppCompatActivity {
         edtEmail2 = findViewById(R.id.edtEmail2);
         edtSenha2 = findViewById(R.id.edtSenha2);
         txtNaotenhoumaconta = findViewById(R.id.txtNaotenhoumaconta);
-        btnEntrar2 = findViewById(R.id.btnCadastrar);
+        btnCadastrar = findViewById(R.id.btnCadastrar);
+        btnSelecionarFoto = findViewById(R.id.btnSelecionarFoto)
 
-        btnEntrar2.setOnClickListener(new View.OnClickListener() {
+        btnCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 createUser();

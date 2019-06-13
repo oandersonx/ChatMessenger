@@ -17,16 +17,16 @@
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/edtNome"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/edtNome"
         app:layout_constraintTop_toBottomOf="@+id/edtNome"
-        app:layout_constraintVertical_bias="0.029" />
+        app:layout_constraintVertical_bias="0.028" />
 
     <EditText
         android:id="@+id/edtSenha2"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="44dp"
         android:ems="10"
         android:hint="Senha"
         android:inputType="textPassword"
@@ -40,10 +40,11 @@
         android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
-        android:background="@android:color/holo_green_dark"
+        android:background="@drawable/bg_button_img_rounded"
         android:text="@string/btCadastrar"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="@+id/edtSenha2"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/edtSenha2"
         app:layout_constraintTop_toBottomOf="@+id/edtSenha2" />
 
@@ -64,7 +65,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.093" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSelecionarFoto"
+        app:layout_constraintVertical_bias="0.073" />
+
+    <Button
+        android:id="@+id/btnSelecionarFoto"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/bg_button_img_rounded"
+        android:text="@string/btFoto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="81dp" />
 
 </android.support.constraint.ConstraintLayout>
